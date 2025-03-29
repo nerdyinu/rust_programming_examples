@@ -1,3 +1,4 @@
+mod prob_1431_kids_with_greatest_num_of_candies;
 mod prob_1480_running_sum_of_1d_array;
 mod prob_1672_richest_customer_wealth;
 mod prob_1920_build_array_from_permutation;
