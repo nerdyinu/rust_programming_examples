@@ -1,4 +1,5 @@
 mod prob_1281_subtract_the_product_and_sum_of_digits_of_an_integer;
+mod prob_1365_how_many_numbers_are_smaller_than_the_current_number;
 mod prob_1431_kids_with_greatest_num_of_candies;
 mod prob_1470_shuffle_the_array;
 mod prob_1480_running_sum_of_1d_array;
