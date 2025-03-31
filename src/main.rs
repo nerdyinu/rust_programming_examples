@@ -1,5 +1,6 @@
 mod prob_1108_defanging_an_ip_address;
 mod prob_1281_subtract_the_product_and_sum_of_digits_of_an_integer;
+mod prob_1313_decompress_run_length_encoded_list;
 mod prob_1365_how_many_numbers_are_smaller_than_the_current_number;
 mod prob_1431_kids_with_greatest_num_of_candies;
 mod prob_1470_shuffle_the_array;
