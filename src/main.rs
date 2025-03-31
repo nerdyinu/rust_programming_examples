@@ -5,6 +5,7 @@ mod prob_1431_kids_with_greatest_num_of_candies;
 mod prob_1470_shuffle_the_array;
 mod prob_1480_running_sum_of_1d_array;
 mod prob_1512_number_of_good_pairs;
+mod prob_1528_shuffle_string;
 mod prob_1672_richest_customer_wealth;
 mod prob_1720_decode_xored_array;
 mod prob_1773_count_items_matching_a_rule;
