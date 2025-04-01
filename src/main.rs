@@ -15,6 +15,7 @@ mod prob_1920_build_array_from_permutation;
 mod prob_1929_concatenation_of_array;
 mod prob_2114_maximum_number_of_words_found_in_sentences;
 mod prob_2160_minimum_sum_of_four_digit_number;
+mod prob_2325_decode_the_message;
 mod prob_771_jewels_and_stones;
 fn main() {
     print!("Hello, World!");
