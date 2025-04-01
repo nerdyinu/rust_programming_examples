@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 #[allow(dead_code)]
-pub fn decode_message(key: String, message: String) -> Result<String, &'static str> {
+pub fn decode_message(key: &str, message: &str) -> Result<String, &'static str> {
     if key.is_empty() {
         return Err("Key cannot be empty");
     }
@@ -11,11 +11,9 @@ pub fn decode_message(key: String, message: String) -> Result<String, &'static s
     let mut substitution_map = HashMap::new();
     let mut next_char = b'a';
 
-    substitution_map.insert(' ', ' ');
-
-    key.char_indices().for_each(|(i, ch)| {
-        if ch != ' ' && !substitution_map.contains_key(&ch) && next_char <= b'z' {
-            substitution_map.insert(ch, (next_char as char));
+    key.chars().for_each(|ch| {
+        if ch != ' ' && !substitution_map.contains_key(&ch) && next_char.is_ascii_lowercase() {
+            substitution_map.insert(ch, char::from(next_char));
             next_char += 1;
         }
     });
@@ -32,26 +30,28 @@ mod tests {
 
     #[test]
     fn test_decode_message() {
-        let key = "the quick brown fox jumps over the lazy dog".to_string();
-        let message = "vkbs bs t suepuv".to_string();
         assert_eq!(
-            decode_message(key, message).unwrap(),
-            "this is a secret".to_string()
+            decode_message(
+                "the quick brown fox jumps over the lazy dog",
+                "vkbs bs t suepuv"
+            )
+            .unwrap(),
+            "this is a secret"
         );
 
-        let key = "abcdefghijklmnopqrstuvwxyz".to_string();
-        let message = "hello world".to_string();
         assert_eq!(
-            decode_message(key, message).unwrap(),
-            "hello world".to_string()
+            decode_message("abcdefghijklmnopqrstuvwxyz", "hello world").unwrap(),
+            "hello world"
         );
 
-        let key = "".to_string();
-        let message = "hello world".to_string();
-        assert_eq!(decode_message(key, message), Err("Key cannot be empty"));
+        assert_eq!(
+            decode_message("", "hello world"),
+            Err("Key cannot be empty")
+        );
 
-        let key = "the quick brown fox jumps over the lazy dog".to_string();
-        let message = "".to_string();
-        assert_eq!(decode_message(key, message), Err("Message cannot be empty"));
+        assert_eq!(
+            decode_message("the quick brown fox jumps over the lazy dog", ""),
+            Err("Message cannot be empty")
+        );
     }
 }
