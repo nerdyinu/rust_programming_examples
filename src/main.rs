@@ -16,6 +16,7 @@ mod prob_1859_sorting_the_sentence;
 mod prob_1920_build_array_from_permutation;
 mod prob_1929_concatenation_of_array;
 mod prob_2011_final_value_of_variable_after_performing_operations;
+mod prob_2037_minimum_number_of_moves_to_seat_everyone;
 mod prob_2114_maximum_number_of_words_found_in_sentences;
 mod prob_2160_minimum_sum_of_four_digit_number;
 mod prob_2325_decode_the_message;
